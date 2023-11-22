@@ -1,0 +1,120 @@
+hr {
+    height: 10px;
+    background: linear-gradient(to right, #4568dc, #b06ab3);
+    
+}   
+h1{
+    color: #fff;
+}  
+h2{
+    color: #fff;
+}   
+h1 img{
+    width: 115px;
+    height: 65px;
+}
+.cesta {
+    position: absolute; /* Posición absoluta dentro del contenedor */
+    top: 40px; /* Distancia desde la parte superior */
+    right: 60px; /* Distancia desde la derecha */
+    color: #ffffff;
+    padding: 10px;
+    width: 20px;
+    height: auto;
+}
+.cesta :hover{
+    background-color: #b06ab3;
+}
+.cesta a{
+    display: block;
+    color: rgb(255, 255, 255); /* Color del texto en el menú */
+    text-decoration: none;
+    font-size: small;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+body {
+    background: #151f42;
+    color: #ffffff;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display:inline;
+    padding: 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px 20px;
+    text-align: center;
+}
+.textKontaktoa{
+    text-align: center;
+}
+/* Produktuetarako estiloak */
+
+
+
+/* Oineko estiloak */
+footer {
+    background: linear-gradient(to right, #4568dc, #b06ab3);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+Img{
+    Width:200px;
+    Height:200px;
+}
+#argazkia{
+    width:750px;
+    height:400px;
+      
+}
+ p{
+    color: #fff;
+}
+.produktuLista{
+    color: #fff;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 400px);
+    max-width: 100%;
+    margin-left: 20px;
+}
+body {
+    background: #151f42;
+    color: #ffffff;
+}
+.orden{
+    color: #ffffff;
+}
+
+.product{
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    color: black;
+}
+.product :hover{
+    transform: scale(0.5);
+}
+.container :hover{
+    transform: scale(1.1);
+}
+#hasiera{
+    text-decoration: none;
+    color: white;
+}
