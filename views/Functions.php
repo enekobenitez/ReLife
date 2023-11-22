@@ -2,9 +2,9 @@
 
 function connDB() {
     $servername = "localhost";
-    $username = "biabe";
-    $password = "biabe123";
-    $dbname = "almzena";
+    $username = "root";
+    $password = "";
+    $dbname = "biabe5taldea";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -68,11 +68,11 @@ function LortuProduktuak() {
     }
 
     if ($orden === "ascendente") {
-        $sql = "SELECT * FROM almzena.logistika ORDER BY salmentaPrezioa ASC";
+        $sql = "SELECT * FROM biabe5taldea.logistika ORDER BY salmentaPrezioa ASC";
     } elseif ($orden === "descendente") {
-        $sql = "SELECT * FROM almzena.logistika ORDER BY salmentaPrezioa DESC";
+        $sql = "SELECT * FROM biabe5taldea.logistika ORDER BY salmentaPrezioa DESC";
     } else {
-        $sql = "SELECT * FROM almzena.logistika";
+        $sql = "SELECT * FROM biabe5taldea.logistika";
     }
 
     $result = $conn->query($sql);
