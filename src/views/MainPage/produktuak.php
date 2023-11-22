@@ -1,11 +1,5 @@
 <!DOCTYPE html>
 <html lang="eu">
-    <?php
-    require '../conn.php';
-    $noticias = obtenerNoticias();
-    insertarDatosProveedor();
-    $productos = obtenerProductosOrdenados();
-    ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
