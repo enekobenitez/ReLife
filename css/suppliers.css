@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #151f42;
+}
+hr {
+    height: 10px;
+    background: linear-gradient(to right, #4568dc, #b06ab3);
+    
+}  
+.container {
+    width: 400px;
+    padding: 50px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 10px;
+}
+
+.form-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 5px;
+}
+
+label {
+    font-weight: bold;
+    
+}
+
+input[type="text"],
+input[type="email"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+
+.form-group {
+    width: 392px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+input[type="reset"]{
+    padding:10px;
+    background-color:red;
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+input[type="reset"]:hover {
+    background-color: #fd3c1a;
+}
+h1 img{
+    width: 400px;
+    height: 250px;
+}
+hr {
+    height: 10px;
+    background: linear-gradient(to right, #4568dc, #b06ab3);
+    
+}        
+h1 img{
+    width: 115px;
+    height: 65px;
+}
+.cesta {
+    position: absolute; /* Posición absoluta dentro del contenedor */
+    top: 40px; /* Distancia desde la parte superior */
+    right: 60px; /* Distancia desde la derecha */
+    color: #ffffff;
+    padding: 10px;
+    width: 20px;
+    height: auto;
+}
+.cesta :hover{
+    background-color: #b06ab3;
+}
+.cesta a{
+    display: block;
+    color: rgb(255, 255, 255); /* Color del texto en el menú */
+    text-decoration: none;
+    font-size: small;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+body {
+    background: #151f42;
+}
+footer{
+    color: #151f42;
+    font-size: medium;
+    background: linear-gradient(to right, #4568dc, #b06ab3);
+}
