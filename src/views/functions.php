@@ -1,10 +1,10 @@
 <?php
 
-function conectarBD() {
+function connDB() {
     $servername = "localhost";
-    $username = "biabe";
-    $password = "biabe123";
-    $dbname = "almzena";
+    $username = "root";
+    $password = "";
+    $dbname = "biabe5taldea";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -16,8 +16,8 @@ function conectarBD() {
 }
 
 
-function obtenerNoticias() {
-    $conn = conectarBD();
+function Berriak() {
+    $conn = connDB();
     $sql = "SELECT izenburua, deskribapena FROM albisteak";
     $result = $conn->query($sql);
 
@@ -37,9 +37,9 @@ function obtenerNoticias() {
 }
 
 
-function insertarDatosProveedor() {
+function SartuDatuak() {
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
-        $conn = conectarBD();
+        $conn = connDB();
 
         $izena = $_POST['Izena'];
         $direkzioa = $_POST['direkzioa'];
@@ -58,9 +58,29 @@ function insertarDatosProveedor() {
     }
 }
 
+function LortuAlbisteak() {
+    $conn = connDB();
 
-function obtenerProductosOrdenados() {
-    $conn = conectarBD();
+    $sql = "SELECT izenburua, deskribapena FROM albisteak";
+    $result = $conn->query($sql);
+
+    $albisteak = array();
+
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $albisteak[] = array(
+                'izenburua' => $row['izenburua'],
+                'deskribapena' => $row['deskribapena']
+            );
+        }
+    }
+
+    $conn->close();
+    return $albisteak;
+}
+
+function LortuProduktuak() {
+    $conn = connDB();
 
     $orden = "";
     if (isset($_GET['orden'])) {
@@ -68,11 +88,11 @@ function obtenerProductosOrdenados() {
     }
 
     if ($orden === "ascendente") {
-        $sql = "SELECT * FROM almzena.logistika ORDER BY salmentaPrezioa ASC";
+        $sql = "SELECT * FROM biabe5taldea.logistika ORDER BY salmentaPrezioa ASC";
     } elseif ($orden === "descendente") {
-        $sql = "SELECT * FROM almzena.logistika ORDER BY salmentaPrezioa DESC";
+        $sql = "SELECT * FROM biabe5taldea.logistika ORDER BY salmentaPrezioa DESC";
     } else {
-        $sql = "SELECT * FROM almzena.logistika";
+        $sql = "SELECT * FROM biabe5taldea.logistika";
     }
 
     $result = $conn->query($sql);
@@ -91,5 +111,18 @@ function obtenerProductosOrdenados() {
 
     $conn->close();
     return $productos;
+}
+function SartuHornitzailea($izena, $direkzioa, $telefonoa, $emaila) {
+    $conn = connDB();
+
+    $sql = "INSERT INTO hornitzaileak (izena, Direkzioa, Telefonoa, emaila) VALUES ('$izena', '$direkzioa', '$telefonoa', '$emaila')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "Datuak ongi sartu dira";
+    } else {
+        echo "Errorea datuak sartzerakoan: " . $conn->error;
+    }
+
+    $conn->close();
 }
 ?>
